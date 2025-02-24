@@ -21,7 +21,7 @@
     <link href="/2025/02/24/measure/"/>
     <url>/2025/02/24/measure/</url>
     
-    <content type="html"><![CDATA[<ul><li>原创<br>categories:</li><li>Java</li></ul><hr><p>这是一篇测试文章</p><p><img src="/test.png" alt="图片引用方法二"></p><p><img src="/images/test.png" alt="图片引用方法三"></p>]]></content>
+    <content type="html"><![CDATA[<ul><li>原创<br>categories:</li><li>Java</li></ul><hr><p>这是一篇测试文章</p><p><img src="/test.png" alt="图片引用方法二"></p><p><img src="/measure/test.png" alt="图片引用方法三"></p>]]></content>
     
     
     
