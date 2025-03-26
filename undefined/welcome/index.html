@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://ayn-alone.github.io/categories/Hexo-Theme-LiveMyLife/">
+  <link rel="canonical" href="https://ayn-alone.github.io/undefined/welcome/">
   <title>
     
-      Ayn-alone的个人博客
+      vscode中的java环境 - Ayn-alone的个人博客
     
   </title>
 <meta name="generator" content="Hexo 7.3.0"></head>
@@ -258,6 +258,17 @@
           
           
           <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/tags/">
               
               TAGS
@@ -278,17 +289,6 @@
           </li>
           
           
-          
-          <li>
-            <a href="/about/">
-              
-              ABOUT
-              
-              
-            </a>
-          </li>
-          
-          
 
           
           <li>
@@ -300,29 +300,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="categories/Hexo-Theme-LiveMyLife/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -384,9 +362,9 @@
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
       
     }
 
@@ -408,10 +386,42 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>Ayn-alone</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">我心里有一簇迎着烈日而生的花</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#OO" title="OO">OO</a>
+              
+            </div>
+            <h1>vscode中的java环境</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by J on
+              2025-03-26
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">6</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.3k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -452,253 +462,383 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <p>这是一个头铁小菜鸟不按课程组推荐来做导致长达一年不断出现配置问题的心酸故事</p>
+<h1 id="OO-2024-Junit配置"><a href="#OO-2024-Junit配置" class="headerlink" title="OO_2024 Junit配置"></a>OO_2024 Junit配置</h1><p>首先，默认java环境已经配置好，今天先针对测试代码</p>
+<p>vscode配置Junit测试环境</p>
+<p>1.安装插件</p>
+<p>下载插件Maven for Java，不用改设置，它会自己改</p>
+<p>2.下载Maven安装包</p>
+<p>在官网下载maven，我下载的版本是3.94，解压，然后配置环境变量</p>
+<p>新建两个环境变量</p>
+<p>再Path中新建%MAVEN_HOME\bin和你的maven文件所在的地方（我不记得要不要精确到bin了，因为我都加了）</p>
+<p>3.配置pom文件</p>
+<p>首先，确保你是这样的结构</p>
+<pre><code>    —main/src/java
+--------- /test/java
+    —pom.xml
+</code></pre>
+<p>src存放功能代码，test存放测试代码</p>
+<p>*这里要注意，git库也在文件main中，平时是隐藏起来的，可以打开文件资源管理器查看，放错了位置会报错</p>
+<p>pom文件与mian文件夹是并列关系，配置如下，貌似就算jdk版本不一样也可以直接使用，直接复制粘贴即可</p>
+<pre><code>&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
+&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+&lt;groupId&gt;oopre&lt;/groupId&gt;
+&lt;artifactId&gt;oopre&lt;/artifactId&gt;
+&lt;packaging&gt;jar&lt;/packaging&gt;
+&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+&lt;name&gt;oopre&lt;/name&gt;
+&lt;url&gt;http://maven.apache.org&lt;/url&gt;
+&lt;properties&gt;
+    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;maven.compiler.source&gt;20&lt;/maven.compiler.source&gt;
+    &lt;maven.compiler.target&gt;20&lt;/maven.compiler.target&gt;
+&lt;/properties&gt;
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+    &lt;groupId&gt;junit&lt;/groupId&gt;
+    &lt;artifactId&gt;junit&lt;/artifactId&gt;
+    &lt;version&gt;4.13.1&lt;/version&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+&lt;build&gt;
+    &lt;sourceDirectory&gt;main/src&lt;/sourceDirectory&gt;
+    &lt;testSourceDirectory&gt;main/test&lt;/testSourceDirectory&gt;
+    &lt;plugins&gt;
+    &lt;plugin&gt;
+        &lt;groupId&gt;org.jacoco&lt;/groupId&gt;
+        &lt;artifactId&gt;jacoco-maven-plugin&lt;/artifactId&gt;
+        &lt;version&gt;0.8.10&lt;/version&gt;
+        &lt;executions&gt;
+            &lt;execution&gt;
+                &lt;goals&gt;
+                    &lt;goal&gt;prepare-agent&lt;/goal&gt;
+                &lt;/goals&gt;
+            &lt;/execution&gt;
+            &lt;execution&gt;
+                &lt;id&gt;report&lt;/id&gt;
+                &lt;phase&gt;prepare-package&lt;/phase&gt;
+                &lt;goals&gt;
+                    &lt;goal&gt;report&lt;/goal&gt;
+                &lt;/goals&gt;
+            &lt;/execution&gt;
+        &lt;/executions&gt;
+    &lt;/plugin&gt;
+    &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+            &lt;configuration&gt;
+                &lt;excludes&gt;
+                    &lt;exclude&gt;**/test/&lt;/exclude&gt;
+                &lt;/excludes&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+&lt;/project&gt;
+</code></pre>
+<p>4.创建Test代码，类的名字+Test这样</p>
+<p>最开始的时候在终端输入mvn install进行初始化</p>
+<p>然后右击文件，点击覆盖率测试运行，会出现这样的界面即为成功</p>
+<p><img src="welcome/jiegou1.png" alt="alt text"></p>
+<p>5.可能会出现的问题</p>
+<p>有些电脑用户（比如华为），可能默认的系统文件含有中文，这会导致报错，比如这样</p>
+<p><img src="welcome/baocuo.png" alt="报错"></p>
+<p>或者任何出现乱码的情况，都很有可能是因为路径含有中文无法识别，这不仅仅需要你的代码所在的路径不含有中文，对应使用到的系统文件、缓存区文件也不能含有</p>
+<p>但是，不要轻易改变用户名！</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Y2000104/article/details/135455409?ops_request_misc=&request_id=&biz_id=102&utm_term=vscode%E6%8A%A5%E9%94%99%E4%B8%AD%E6%96%87%E8%B7%AF%E5%BE%84&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-135455409.142%5Ev100%5Epc_search_result_base2&spm=1018.2226.3001.4187">https://blog.csdn.net/Y2000104/article/details/135455409?ops_request_misc&#x3D;&amp;request_id&#x3D;&amp;biz_id&#x3D;102&amp;utm_term&#x3D;vscode报错中文路径&amp;utm_medium&#x3D;distribute.pc_search_result.none-task-blog-2<del>all</del>sobaiduweb~default-0-135455409.142^v100^pc_search_result_base2&amp;spm&#x3D;1018.2226.3001.4187</a></p>
+<p>这时候，打开电脑设置，在左侧搜索栏搜索 区域设置</p>
+<p><img src="welcome/shezhi.png" alt="image.png"></p>
+<p>然后点击 管理语言设置</p>
+<p><img src="welcome/guanli.png" alt="image.png"></p>
+<p>在弹出来的小窗中，点击更改系统区域设置</p>
+<p><img src="welcome/xiaochuang.png" alt="image.png"></p>
+<p>然后勾选Beta版语言</p>
+<p><img src="welcome/gouxuan.png" alt="image.png"></p>
+<p>这并不会改变你的电脑默认语言</p>
+<p>然后重启电脑，打开vscode，进行覆盖率测试，即可解决</p>
+<p>哦耶！</p>
+<h1 id="OO-2025-Unit2-多线程"><a href="#OO-2025-Unit2-多线程" class="headerlink" title="OO_2025_Unit2 多线程"></a>OO_2025_Unit2 多线程</h1><h2 id="vscode导入jar包即添加依赖的问题"><a href="#vscode导入jar包即添加依赖的问题" class="headerlink" title="vscode导入jar包即添加依赖的问题"></a>vscode导入jar包即添加依赖的问题</h2><p>把pom.xml放到和src并列的位置，然后在depencies里面加新的依赖，</p>
+<p>比如这一次是</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.13.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>elevator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>elevator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
+<p>然后在终端输入</p>
+<p>mvn install:install-file -Dfile&#x3D;D:\vscode-whole\java_homework\oo_homework_2025_23371252_hw_5\elevator1.jar -DgroupId&#x3D;elevator -DartifactId&#x3D;elevator -Dversion&#x3D;”1.0.0” -Dpackaging&#x3D;jar</p>
+<p>这个Dgro也要记得改upId&#x3D;elevator -DartifactId&#x3D;elevator </p>
+<p>最后用mvn clean install </p>
+<p>弄完了记得ctrl+shift+P先清理缓存工作区</p>
+<p>然后重启</p>
+<h2 id="有关输入输出重定向"><a href="#有关输入输出重定向" class="headerlink" title="有关输入输出重定向"></a>有关输入输出重定向</h2><p>我的目标是：Ctrl+Shfit+B,文件读取input.txt然后输入到myoutput.txt<br>我的文件结构是<br><img src="welcome/jiegoutu.jpg" alt="alt text"><br>于是task.json</p>
+<pre><code>&#123;
+    &quot;version&quot;: &quot;2.0.0&quot;,
+    &quot;tasks&quot;: [
+        &#123;
+            &quot;label&quot;: &quot;Run Java Program&quot;,
+            &quot;type&quot;: &quot;shell&quot;,
+            &quot;command&quot;: &quot;java&quot;,
+            &quot;args&quot;: [
+                &quot;-cp&quot;,
+                &quot;target/classes;officialpackages.jar&quot;,
+                &quot;MainClass&quot;
+            ],
+            &quot;options&quot;: &#123;
+                &quot;shell&quot;: &#123;
+                    &quot;executable&quot;: &quot;C:\\Windows\\System32\\cmd.exe&quot;,
+                    &quot;args&quot;: [
+                        &quot;/c&quot;,
+                        &quot;java -cp \&quot;target/classes;officialpackages.jar\&quot; MainClass &lt; input.txt &gt; myoutput.txt 2&gt;&amp;1&quot;
+                    ]
+                &#125;
+            &#125;,
+            &quot;group&quot;: &#123;
+                &quot;kind&quot;: &quot;build&quot;,
+                &quot;isDefault&quot;: true
+            &#125;
+        &#125;
+    ]
+&#125;
+</code></pre>
+<p>我遇到的问题是，我的vscode貌似默认的powershell，然后就是用了如上的强制使用</p>
 
-      
 
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
-          <span class="tag-text">2020</span>
-        </span>
-        <ul>
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <li>
-            04-17
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/undefined/en/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
-              <span>
-                Hexo-Theme-LiveMyLife
-                
-                -- 
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            04-17
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/cn/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
-              <span>
-                Hexo-Theme-LiveMyLife
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
           
         </ul>
-      </div>
-      
-    </div>
-  </div>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
 </div>
+<!-- tip end -->
 
+        <!-- tip end -->
+        
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
 
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
-    
-        <!-- Featured Tags -->
-
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="2">Hexo-Theme-LiveMyLife</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/header_img/furong.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Do not go gentle into that good night</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/Ayn-alone">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="https://twitter.com/Ayn-alone_">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="https://www.instagram.com/Ayn-alone">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-      <li>
-        <a target="_blank" href="http://weibo.com/Ayn-alone">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../cn/cn/Hexo-Theme-LiveMyLife/">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-    <a href="../../undefined/en/Hexo-Theme-LiveMyLife/">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=vscode中的java环境&body=Hi,I found this website and thought you might like it https://ayn-alone.github.io/undefined/welcome/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
   </ul>
 </div>
 
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
+        <!-- Sharing End -->
+        
         <hr>
-    
-        <!-- Friends Blog -->
 
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
   
-</ul>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Wed Mar 26 2025 12:59:09 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
 
 
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
         <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
     
-        <!-- Archives -->
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#OO-2024-Junit%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">OO_2024 Junit配置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#OO-2025-Unit2-%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">OO_2025_Unit2 多线程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#vscode%E5%AF%BC%E5%85%A5jar%E5%8C%85%E5%8D%B3%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">vscode导入jar包即添加依赖的问题</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9C%89%E5%85%B3%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">有关输入输出重定向</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li></ul>
-</div>
 
 
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#OO" title="OO">OO</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
         <hr>
-    
-        <!-- Categories -->
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
 
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Hexo-Theme-LiveMyLife">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
