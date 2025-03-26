@@ -247,9 +247,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              ARCHIVES
+              ABOUT
               
               
             </a>
@@ -258,9 +258,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              ABOUT
+              ARCHIVES
               
               
             </a>
@@ -473,14 +473,11 @@
         <p>这是一个头铁小菜鸟不按课程组推荐来做导致长达一年不断出现配置问题的心酸故事</p>
 <h1 id="OO-2024-Junit配置"><a href="#OO-2024-Junit配置" class="headerlink" title="OO_2024 Junit配置"></a>OO_2024 Junit配置</h1><p>首先，默认java环境已经配置好，今天先针对测试代码</p>
 <p>vscode配置Junit测试环境</p>
-<p>1.安装插件</p>
-<p>下载插件Maven for Java，不用改设置，它会自己改</p>
-<p>2.下载Maven安装包</p>
-<p>在官网下载maven，我下载的版本是3.94，解压，然后配置环境变量</p>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>下载插件Maven for Java，不用改设置，它会自己改</p>
+<h2 id="下载Maven安装包"><a href="#下载Maven安装包" class="headerlink" title="下载Maven安装包"></a>下载Maven安装包</h2><p>在官网下载maven，我下载的版本是3.94，解压，然后配置环境变量</p>
 <p>新建两个环境变量</p>
 <p>再Path中新建%MAVEN_HOME\bin和你的maven文件所在的地方（我不记得要不要精确到bin了，因为我都加了）</p>
-<p>3.配置pom文件</p>
-<p>首先，确保你是这样的结构</p>
+<h2 id="配置pom文件"><a href="#配置pom文件" class="headerlink" title="配置pom文件"></a>配置pom文件</h2><p>首先，确保你是这样的结构</p>
 <pre><code>    —main/src/java
 --------- /test/java
     —pom.xml
@@ -546,12 +543,10 @@ xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.o
 &lt;/build&gt;
 &lt;/project&gt;
 </code></pre>
-<p>4.创建Test代码，类的名字+Test这样</p>
-<p>最开始的时候在终端输入mvn install进行初始化</p>
+<h2 id="创建Test代码，类的名字-Test这样"><a href="#创建Test代码，类的名字-Test这样" class="headerlink" title="创建Test代码，类的名字+Test这样"></a>创建Test代码，类的名字+Test这样</h2><p>最开始的时候在终端输入mvn install进行初始化</p>
 <p>然后右击文件，点击覆盖率测试运行，会出现这样的界面即为成功</p>
 <p><img src="jiegou1.png" alt="alt text"></p>
-<p>5.可能会出现的问题</p>
-<p>有些电脑用户（比如华为），可能默认的系统文件含有中文，这会导致报错，比如这样</p>
+<h2 id="可能会出现的问题"><a href="#可能会出现的问题" class="headerlink" title="可能会出现的问题"></a>可能会出现的问题</h2><p>有些电脑用户（比如华为），可能默认的系统文件含有中文，这会导致报错，比如这样</p>
 <p><img src="baocuo.png" alt="报错"></p>
 <p>或者任何出现乱码的情况，都很有可能是因为路径含有中文无法识别，这不仅仅需要你的代码所在的路径不含有中文，对应使用到的系统文件、缓存区文件也不能含有</p>
 <p>但是，不要轻易改变用户名！</p>
@@ -749,7 +744,7 @@ xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.o
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#OO-2024-Junit%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">OO_2024 Junit配置</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#OO-2025-Unit2-%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">OO_2025_Unit2 多线程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#vscode%E5%AF%BC%E5%85%A5jar%E5%8C%85%E5%8D%B3%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">vscode导入jar包即添加依赖的问题</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9C%89%E5%85%B3%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">有关输入输出重定向</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#OO-2024-Junit%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">OO_2024 Junit配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">安装插件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%8B%E8%BD%BDMaven%E5%AE%89%E8%A3%85%E5%8C%85"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">下载Maven安装包</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%85%8D%E7%BD%AEpom%E6%96%87%E4%BB%B6"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">配置pom文件</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BATest%E4%BB%A3%E7%A0%81%EF%BC%8C%E7%B1%BB%E7%9A%84%E5%90%8D%E5%AD%97-Test%E8%BF%99%E6%A0%B7"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">创建Test代码，类的名字+Test这样</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">可能会出现的问题</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#OO-2025-Unit2-%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">OO_2025_Unit2 多线程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#vscode%E5%AF%BC%E5%85%A5jar%E5%8C%85%E5%8D%B3%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">vscode导入jar包即添加依赖的问题</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9C%89%E5%85%B3%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">有关输入输出重定向</span></a></li></ol></li></ol>
         
         </div>
       </aside>
